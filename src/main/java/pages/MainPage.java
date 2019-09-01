@@ -51,33 +51,16 @@ public class MainPage extends BasePage {
     }
 
 
-    public ArrayList<Integer> getNumbers() {
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
-        for (WebElement e : saturnPrices) {
-            String s = e.getText().replaceAll("[^0-9]", "");
-            int i = Integer.parseInt(s);
-            numbers.add(i);
-        }
-        return (numbers);
-
+    private ArrayList<Integer> getSaturnPrices() {
+        return getPrices(saturnPrices);
     }
 
-    public void showPrices() {
-        for (Integer e: getNumbers()) {
-            System.out.println(e);
-        }
+    public void showSaturnPrices() {
+        showPrices(getSaturnPrices());
     }
 
-    public void showPricesSum() {
-        int sum = 0;
-        for (int i : getNumbers()) {
-            if (i > 7000) {
-                sum += i;
-            } else
-                sum += 0;
-
-        }
-        System.out.println("Сумма товаров:" + sum + "грн");
+    public void showSaturnPricesSum(int limit) {
+        showPricesSum(getSaturnPrices(), limit);
     }
 
 }
