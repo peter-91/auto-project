@@ -77,7 +77,7 @@ public class MainPage extends BasePage {
                 sum += 0;
 
         }
-        System.out.println("Сумма товаров:" + sum + " грн");
+        System.out.println("Сумма товаров:" + sum + "грн");
     }
 
 }
