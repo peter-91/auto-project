@@ -32,7 +32,7 @@ public class MainPage extends BasePage {
     private WebElement findButton;
 
     private void fillSearchField(String query) {
-        System.out.println("Ввод товара: " + query + " грн");
+        System.out.println("Ввод товара: " + query);
         sendKeys(searchField, query);
     }
 
@@ -77,7 +77,7 @@ public class MainPage extends BasePage {
                 sum += 0;
 
         }
-        System.out.println("Сумма товаров:" + sum);
+        System.out.println("Сумма товаров:" + sum + " грн");
     }
 
 }
