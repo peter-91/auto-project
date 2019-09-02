@@ -63,6 +63,19 @@ public class MainPage extends BasePage {
         showPricesSum(getSaturnPrices(), limit);
     }
 
+     public int fridgeSum(){
+        int sum=0;
+        for (WebElement saturnPrice:saturnPrices) {
+            String s = saturnPrice.getText().replaceAll("[^0-9]", "");
+            int fridgePrice = Integer.parseInt(s);
+            if (fridgePrice>5000){
+            sum = sum + fridgePrice;
+            }
+        }
+        return sum;
+
+     }
+
 }
 
 
