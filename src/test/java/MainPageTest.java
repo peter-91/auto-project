@@ -10,8 +10,18 @@ public class MainPageTest extends BaseTest {
     int limit = 7000;
 
 
+
     @Test
-    public void searchTest() {
+    public void showSaturnPricesTest() {
+        mainPage = new MainPage(getDriver());
+        basePage = new BasePage();
+        basePage.openURL("https://pn.com.ua/");
+        mainPage.startSearch(query);
+        mainPage.chooseManufacturer(mainPage.saturnManufacturerButton);
+        mainPage.showSaturnPrices();
+    }
+    @Test
+    public void showSaturnSumPricesTest() {
         mainPage = new MainPage(getDriver());
         basePage = new BasePage();
         basePage.openURL("https://pn.com.ua/");
@@ -19,4 +29,6 @@ public class MainPageTest extends BaseTest {
         mainPage.chooseManufacturer(mainPage.saturnManufacturerButton);
         mainPage.showSaturnPricesSum(limit);
     }
+
 }
+

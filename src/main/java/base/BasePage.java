@@ -50,8 +50,8 @@ public class BasePage {
     }
 
     public void showPrices(List<Integer> list) {
-        for (Integer e: list) {
-            System.out.println(e);
+        for (Integer e : list) {
+            System.out.println(e + " грн");
         }
     }
 
@@ -74,7 +74,10 @@ public class BasePage {
                 sum += 0;
 
         }
-        System.out.println("Сумма товаров:" + sum + " грн");
-    }
+        if (sum == 0) {
+            System.out.println("Товар отсутсвует");
+        } else
+            System.out.println("Сумма товаров:" + sum + " грн");
 
+    }
 }
