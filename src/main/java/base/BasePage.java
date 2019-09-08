@@ -1,6 +1,5 @@
 package base;
-
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,5 +78,36 @@ public class BasePage {
         } else
             System.out.println("Сумма товаров:" + sum + " грн");
 
+    }
+
+    public void waitForVisibilityOfElement(By locator, int time) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, time);
+            wait.until(visibilityOf(driver.findElement(locator)));
+        } catch (NoSuchElementException e) {
+
+            throw e;
+        }
+    }
+
+    public void clickOnElement(By locator) {
+        waitForVisibilityOfElement(locator, 10);
+        driver.findElement(locator).click();
+    }
+
+    public void sendKeys(By locator, String string) {
+        waitForVisibilityOfElement(locator, 10);
+        driver.findElement(locator).sendKeys(string);
+    }
+
+    public Boolean isElementPresent(By locator) {
+        try {
+            waitForVisibilityOfElement(locator, 10);
+            driver.findElement(locator).isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+
+        }
     }
 }

@@ -18,7 +18,7 @@ public class MainPageTest extends BaseTest {
         basePage.openURL("https://pn.com.ua/");
         mainPage.startSearch(query);
         mainPage.chooseManufacturer(mainPage.saturnManufacturerButton);
-        mainPage.showSaturnPrices();
+        mainPage.fridgeSum(limit);
     }
     @Test
     public void showSaturnSumPricesTest() {

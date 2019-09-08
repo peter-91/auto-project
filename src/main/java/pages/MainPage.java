@@ -1,7 +1,6 @@
 package pages;
 
 import base.BasePage;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,12 +62,12 @@ public class MainPage extends BasePage {
         showPricesSum(getSaturnPrices(), limit);
     }
 
-     public int fridgeSum(){
+     public int fridgeSum(int limit){
         int sum=0;
         for (WebElement saturnPrice:saturnPrices) {
             String s = saturnPrice.getText().replaceAll("[^0-9]", "");
             int fridgePrice = Integer.parseInt(s);
-            if (fridgePrice>5000){
+            if (fridgePrice>limit){
             sum = sum + fridgePrice;
             }
         }
