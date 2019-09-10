@@ -62,17 +62,19 @@ public class MainPage extends BasePage {
         showPricesSum(getSaturnPrices(), limit);
     }
 
-     public int fridgeSum(int limit){
-        int sum=0;
-        for (WebElement saturnPrice:saturnPrices) {
+     public void fridgeSum(int limit){
+        int sum = 0;
+        for (WebElement saturnPrice: saturnPrices) {
             String s = saturnPrice.getText().replaceAll("[^0-9]", "");
             int fridgePrice = Integer.parseInt(s);
             if (fridgePrice>limit){
             sum = sum + fridgePrice;
             }
         }
-        return sum;
-
+         if (sum == 0) {
+             System.out.println("Товар отсутсвует");
+         } else
+             System.out.println("Сумма товаров:" + sum + " грн");
      }
 
 }
