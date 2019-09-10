@@ -22,7 +22,7 @@ public class DataProviderWithExcelLoginPageTest extends BaseTest {
     @DataProvider
     public Object[][] Authentication() throws Exception {
 
-        Object[][] testObjArray = ExcelUtils.getTableArray("C://Users//SuperUser//Desktop//auto-project//src//main//java//testData//TestData.xlsx", "Sheet1");
+        Object[][] testObjArray = ExcelUtils.getTableArray(".//src//main//java//testData//TestData.xlsx", "Sheet1");
 
         return (testObjArray);
     }
