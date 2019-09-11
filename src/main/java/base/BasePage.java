@@ -39,12 +39,12 @@ public class BasePage {
     }
 
     public void clickOnElement(WebElement element) {
-        waitForVisibilityOfElement(element, 10);
+        waitForVisibilityOfElement(element, 20);
         element.click();
     }
 
     public void sendKeys(WebElement element, String string) {
-        waitForVisibilityOfElement(element, 10);
+        waitForVisibilityOfElement(element, 20);
         element.sendKeys(string);
     }
 
@@ -91,12 +91,12 @@ public class BasePage {
     }
 
     public void clickOnElement(By locator) {
-        waitForVisibilityOfElement(locator, 10);
+        waitForVisibilityOfElement(locator, 30);
         driver.findElement(locator).click();
     }
 
     public void sendKeys(By locator, String string) {
-        waitForVisibilityOfElement(locator, 10);
+        waitForVisibilityOfElement(locator, 30);
         driver.findElement(locator).sendKeys(string);
     }
 

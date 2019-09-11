@@ -1,12 +1,12 @@
 <suite name="TestSuite" verbose="2" preserve-order="true">
-    <test  name="CalculateSum">
-        <classes>
-            <class name="MainPageTest"></class>
-        </classes>
-</test>
     <test  name="LoginUsingDataProvider">
         <classes>
             <class name="DataProviderLoginPageTest"></class>
+        </classes>
+    </test>
+    <test  name="CalculateSum">
+        <classes>
+            <class name="MainPageTest"></class>
         </classes>
     </test>
     <test  name="LoginUsingDataProviderWithExcel">
