@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -13,11 +15,13 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 public class BasePage {
     private WebDriver driver;
 
-
     public BasePage() {
         driver = BaseTest.getDriver();
-
     }
+
+
+
+
 
     public void waitForVisibilityOfElement(WebElement element, int time) {
         try {
@@ -110,4 +114,9 @@ public class BasePage {
 
         }
     }
+   // public void moveMouseTo(By locator) {
+    //    waitForVisibilityOfElement(locator, 20);
+      //  Actions action = new Actions(driver);
+       // action.moveToElement(driver.findElement(locator)).build().perform();
+    //}
 }

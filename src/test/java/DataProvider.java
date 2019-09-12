@@ -8,7 +8,7 @@ class DataProviderClass {
 
     public static Object[][] credentials() {
 
-        return new Object[][] { { "p.sasnik@gmail.com", "Tunein123" }, { "tunein.user125@gmail.com", "Tunein123" }};
+        return new Object[][] { { "cjwumhh_sadansen_1568306401@tfbnw.net", "jygjdxnth2g" }, { "rdgunjp_mcdonaldson_1568306533@tfbnw.net", "m05ip2eyz5v" }};
 
     }
 

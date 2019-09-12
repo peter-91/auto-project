@@ -14,17 +14,16 @@ public class LoginPage extends BasePage {
     }
 
 
-    private By userNameField = By.xpath("//div[@class='StaticLoggedOutHomePage-login']//input[@class='text-input email-input js-signin-email']");
+    private By userNameField = By.cssSelector("[data-testid=royal_email]");
 
-    private By passwordField = By.xpath("//div[@class='StaticLoggedOutHomePage-login']//input[@class='text-input']");
+    private By passwordField = By.cssSelector("[data-testid=royal_pass]");
 
-    private By logInInButton = By.xpath("//input[@class='EdgeButton EdgeButton--secondary EdgeButton--medium submit js-submit']");
+    private By logInInButton = By.cssSelector("[data-testid=royal_login_button]");
 
-    private By moreMenu = By.cssSelector("[data-testid='AppTabBar_More_Menu']");
+    private By userNavButton = By.id("userNavigationLabel");
 
-    private By logOutButton = By.cssSelector("[data-testid='logout']");
+    private By logOutButton = By.xpath("//li[@class='_54ni navSubmenu _6398 _64kz __MenuItem']");
 
-    private By logOutDialogButton = By.cssSelector("[data-testid='confirmationSheetConfirm']");
 
 
 
@@ -48,9 +47,9 @@ public class LoginPage extends BasePage {
     }
 
     public void logOut() {
-        clickOnElement(moreMenu);
+        clickOnElement(userNavButton);
+        //moveMouseTo(logOutButton);
         clickOnElement(logOutButton);
-        clickOnElement(logOutDialogButton);
     }
 
 
