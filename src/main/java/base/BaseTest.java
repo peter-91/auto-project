@@ -20,7 +20,7 @@ public class BaseTest {
 
         @BeforeTest
         public void setUp() {
-            options.addArguments("--disable-notifications");
+            options.addArguments("--disable-notifications").addArguments("--headless");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
