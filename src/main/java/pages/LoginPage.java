@@ -40,15 +40,12 @@ public class LoginPage extends BasePage {
 
     public void signIn(String email, String password) {
         enterEmail(email);
-        System.out.println("Login entry:");
         enterPassword(password);
-        System.out.println("Password entry:");
         clickLogInButton();
     }
 
     public Boolean isProfileIconPresented() {
         return isElementPresent(profileIcon);
     }
-
 }
 

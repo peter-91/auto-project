@@ -1,5 +1,6 @@
 import base.BasePage;
 import base.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
@@ -17,6 +18,7 @@ public class DataProviderLoginPageTest extends BaseTest {
         loginPage = new LoginPage(getDriver());
         basePage.openURL("https://www.facebook.com");
         loginPage.signIn(email, password);
+        Assert.assertTrue(loginPage.isProfileIconPresented());
     }
 
 }
