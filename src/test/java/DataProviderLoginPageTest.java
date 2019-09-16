@@ -17,7 +17,6 @@ public class DataProviderLoginPageTest extends BaseTest {
         loginPage = new LoginPage(getDriver());
         basePage.openURL("https://www.facebook.com");
         loginPage.signIn(email, password);
-        loginPage.logOut();
     }
 
 }

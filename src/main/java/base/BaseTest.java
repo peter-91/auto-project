@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
@@ -18,7 +19,7 @@ public class BaseTest {
 
 
 
-        @BeforeTest
+        @BeforeMethod
         public void setUp() {
             options.addArguments("--disable-notifications").addArguments("--headless");
             WebDriverManager.chromedriver().setup();
@@ -30,8 +31,8 @@ public class BaseTest {
         }
 
 
-        @AfterTest
-        public void tearDown(){
+        @AfterMethod
+        public void tearDown() {
             driver.quit();
         }
 

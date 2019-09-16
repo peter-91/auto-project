@@ -20,9 +20,7 @@ public class LoginPage extends BasePage {
 
     private By logInInButton = By.cssSelector("[data-testid=royal_login_button]");
 
-    private By userNavButton = By.id("userNavigationLabel");
-
-    private By logOutButton = By.xpath("//li[@class='_54ni navSubmenu _6398 _64kz __MenuItem']");
+   private By profileIcon = By.cssSelector("[data-click=profile_icon]");
 
 
 
@@ -42,17 +40,15 @@ public class LoginPage extends BasePage {
 
     public void signIn(String email, String password) {
         enterEmail(email);
+        System.out.println("Login entry:");
         enterPassword(password);
+        System.out.println("Password entry:");
         clickLogInButton();
     }
 
-    public void logOut() {
-        clickOnElement(userNavButton);
-        //moveMouseTo(logOutButton);
-        clickOnElement(logOutButton);
+    public Boolean isProfileIconPresented() {
+        return isElementPresent(profileIcon);
     }
-
-
 
 }
 
